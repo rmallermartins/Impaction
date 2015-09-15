@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Impaction</name>
+    <description></description>
+    <version>1.1.0.0</version>
+    <author>Rodrigo Maller Martins</author>
+    <author-email>rmallermartins@gmail.com</author-email>
+    <author-website>http://</author-website>
+    <app-id>com.rmallermartins.impaction</app-id>
+    <unique-id>xt3vl37l066h</unique-id>
+    <saved-with-version>21202</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>640</width>
+        <height>360</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">Yes</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Player" sid="4674238252602372">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="moveSpd" sid="8015021903610826" type="number" />
+                <instance-variable name="canShoot" sid="9585761077912853" type="boolean" />
+                <instance-variable name="life" sid="1893494031194668" type="number" />
+                <instance-variable name="score" sid="3763201972672684" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="CustomMovement" sid="9936143486418396">
+                    <behavior id="custom" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="2335363791924342">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="shootTimer" sid="4277150348801355">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9061799412378418" speed="5">
+                    <frame duration="1" hotspotX="0.493333" hotspotY="0.50505" original-source="E:\Construct 2\freebundle\Sprites\Space shooter\playerShip1_blue.png">
+                        <collision-poly>
+                            <point x="0.553333" y="0.0151515" />
+                            <point x="0.661667" y="0.35101" />
+                            <point x="1" y="0.496212" />
+                            <point x="0.663333" y="0.641414" />
+                            <point x="0.56" y="0.979798" />
+                            <point x="0.2" y="0.949495" />
+                            <point x="0" y="0.5" />
+                            <point x="0.2" y="0.050505" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="4202866178125193">
+            <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="scrollSpd" sid="9155412300065057" type="number" />
+            </instance-variables>
+            <texture original-source="E:\Construct 2\freebundle\Sprites\Space shooter\Backgrounds\purple.png" />
+        </object-type>
+        <object-type name="Keyboard" sid="1487291556904114">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Mouse" sid="7342608044131899">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Bullet" sid="9176669835517305">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="speed" sid="7931953429727752" type="number" />
+                <instance-variable name="shootSpd" sid="8932790032293572" type="number" />
+                <instance-variable name="damage" sid="9952682150871674" type="number" />
+                <instance-variable name="initX" sid="616953680064976" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="2259894745112782">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="CustomMovement" sid="151798184850932">
+                    <behavior id="custom" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3809859235683528" speed="5">
+                    <frame duration="1" hotspotX="0.513514" hotspotY="0.555556" original-source="E:\Construct 2\freebundle\Sprites\Space shooter\Lasers\laserBlue07.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Enemy1" sid="5251823907163481">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="spawnX" sid="4915149915539988" type="number" />
+                <instance-variable name="life" sid="1657518639070962" type="number" />
+                <instance-variable name="moveSpd" sid="1692417693314431" type="number" />
+                <instance-variable name="givenScore" sid="470246558010712" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="shootTimer" sid="6686080333855124">
+                    <behavior id="Timer" />
+                </behavior-type>
+                <behavior-type name="CustomMovement" sid="9888873154732054">
+                    <behavior id="custom" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="3519916430086936">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8490050057021978" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505376" original-source="E:\Construct 2\freebundle\Sprites\Space shooter\Enemies\enemyRed1.png">
+                        <collision-poly>
+                            <point x="0.190476" y="0.172043" />
+                            <point x="0.5" y="0.0537634" />
+                            <point x="0.880952" y="0.107527" />
+                            <point x="0.77381" y="0.494624" />
+                            <point x="0.880952" y="0.892473" />
+                            <point x="0.5" y="0.935484" />
+                            <point x="0.190476" y="0.827957" />
+                            <point x="0.309524" y="0.494624" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BulletEnemy1" sid="4056259519799468">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="speed" sid="5229975586526477" type="number" />
+                <instance-variable name="damage" sid="4080230649675537" type="number" />
+                <instance-variable name="shootSpd" sid="1564787413520147" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="CustomMovement" sid="9027575119630783">
+                    <behavior id="custom" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="7839319941309596">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3301218078923226" speed="5">
+                    <frame duration="1" hotspotX="0.513514" hotspotY="0.555556" original-source="E:\Construct 2\freebundle\Sprites\Space shooter\Lasers\laserRed07.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Lifebar" sid="385679500691332">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="739926117560223" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LifeText" sid="7838732909953263">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ScoreText" sid="8821371349893829">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="PowerUpLife" sid="6632875309772579">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="speed" sid="1623777369215193" type="number" />
+                <instance-variable name="heal" sid="8158430466303312" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="CustomMovement" sid="5902907643627976">
+                    <behavior id="custom" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8827488856540284" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.52381" original-source="E:\Construct 2\freebundle\Sprites\Space shooter\Power-ups\pill_green.png">
+                        <collision-poly>
+                            <point x="0.534091" y="0.0119048" />
+                            <point x="0.920455" y="0.0714286" />
+                            <point x="0.954545" y="0.428571" />
+                            <point x="0.426136" y="0.958333" />
+                            <point x="0.0568182" y="0.928571" />
+                            <point x="0.0170454" y="0.547619" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Enemy2" sid="3574721400281534">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="spawnX" sid="6257180914490669" type="number" />
+                <instance-variable name="life" sid="1338584420565188" type="number" />
+                <instance-variable name="moveSpd" sid="8826087199436751" type="number" />
+                <instance-variable name="givenScore" sid="7315732503077588" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="ShootTimer" sid="5532422650249947">
+                    <behavior id="Timer" />
+                </behavior-type>
+                <behavior-type name="CustomMovement" sid="5604124537406251">
+                    <behavior id="custom" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="9799329189144798">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9897291459766984" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505376" original-source="E:\Construct 2\freebundle\Sprites\Space shooter\Enemies\enemyGreen1.png">
+                        <collision-poly>
+                            <point x="0.880952" y="0.107527" />
+                            <point x="0.77381" y="0.494624" />
+                            <point x="0.880952" y="0.892473" />
+                            <point x="0.5" y="0.935484" />
+                            <point x="0.190476" y="0.827957" />
+                            <point x="0.309524" y="0.494624" />
+                            <point x="0.190476" y="0.172043" />
+                            <point x="0.5" y="0.0645161" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BulletEnemy2" sid="4892430520431555">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="speed" sid="2350092742929736" type="number" />
+                <instance-variable name="damage" sid="5913627243027936" type="number" />
+                <instance-variable name="shootSpd" sid="9767952997631721" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="CustomMovement" sid="4388831731920806">
+                    <behavior id="custom" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="4045436399473858">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3957458268640252" speed="5">
+                    <frame duration="1" hotspotX="0.513514" hotspotY="0.555556" original-source="E:\Construct 2\freebundle\Sprites\Space shooter\Lasers\laserGreen13.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LevelController" sid="1113769533541174">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Level" sid="9876635041447274" type="number" />
+                <instance-variable name="nextEnemy" sid="2974627205103504" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="enemySpawner" sid="9057130408077679">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6252590517781574" speed="5">
+                    <frame duration="1" hotspotX="0.529412" hotspotY="0.529412" original-source="E:\Construct 2\freebundle\Sprites\Space shooter\UI\numeralX.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Enemy3" sid="425932375868575">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="spawnX" sid="2253769932818343" type="number" />
+                <instance-variable name="life" sid="5103990163425646" type="number" />
+                <instance-variable name="moveSpd" sid="6883355171330829" type="number" />
+                <instance-variable name="givenScore" sid="5602669955986866" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="ShootTimer" sid="5680252043345111">
+                    <behavior id="Timer" />
+                </behavior-type>
+                <behavior-type name="CustomMovement" sid="5214673720687371">
+                    <behavior id="custom" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="7655147958464437">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4239971676612563" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505376" original-source="E:\Construct 2\freebundle\Sprites\Space shooter\Enemies\enemyBlack1.png">
+                        <collision-poly>
+                            <point x="0.190476" y="0.172043" />
+                            <point x="0.5" y="0.0537634" />
+                            <point x="0.880952" y="0.107527" />
+                            <point x="0.77381" y="0.494624" />
+                            <point x="0.880952" y="0.892473" />
+                            <point x="0.5" y="0.935484" />
+                            <point x="0.190476" y="0.827957" />
+                            <point x="0.309524" y="0.494624" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BulletEnemy3" sid="6977194835899321">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="speed" sid="6472675783580282" type="number" />
+                <instance-variable name="damage" sid="201331148614199" type="number" />
+                <instance-variable name="shootSpd" sid="7257414089487946" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="CustomMovement" sid="2776969045621103">
+                    <behavior id="custom" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="4855530193197306">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1860930532016807" speed="5">
+                    <frame duration="1" hotspotX="0.432432" hotspotY="0.555556" original-source="E:\Construct 2\freebundle\Sprites\Space shooter\Lasers\laserRed07 - Copia.png">
+                        <collision-poly>
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="4417762646106741">
+            <plugin id="Audio" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="3" />
+        <global-instance type="Mouse" uid="4" />
+        <global-instance type="Audio" uid="17">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="SFX1.m4a" />
+        <file name="SFX1.ogg" />
+        <file name="Lazer Fire 1.m4a" />
+        <file name="Lazer Fire 1.ogg" />
+        <file name="Explosion 3.m4a" />
+        <file name="Explosion 3.ogg" />
+        <file name="RetroLaser1.m4a" />
+        <file name="RetroLaser1.ogg" />
+    </sounds-folder>
+    <music-folder>
+        <file name="MattOglseby - 3.m4a" />
+        <file name="MattOglseby - 3.ogg" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
